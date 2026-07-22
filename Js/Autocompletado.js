@@ -3,6 +3,7 @@ var elementoInputIntento = document.getElementById('InputIntento');
 var elementoListaSugerencias = document.getElementById('ListaSugerencias');
 var sugerenciasActuales = [];
 var indiceSugerenciaSeleccionada = -1;
+var errorBusquedaMostrado = false;
 function ocultarSugerencias() {
     elementoListaSugerencias.classList.add('oculto');
     elementoListaSugerencias.textContent = '';
@@ -67,6 +68,10 @@ function manejarExitoBusqueda(jugadores) {
 }
 function manejarErrorBusqueda() {
     ocultarSugerencias();
+    if (!errorBusquedaMostrado) {
+        errorBusquedaMostrado = true;
+        mostrarModal('Error', 'No se pudo obtener la lista de jugadores. Revisa tu conexion e intenta de nuevo.');
+    }
 }
 function manejarCambioInputIntento() {
     var consulta;
