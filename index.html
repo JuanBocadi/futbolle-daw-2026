@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolle - Adivina al jugador</title>
+    <link rel="stylesheet" href="Css/Reset.css">
+    <link rel="stylesheet" href="Css/Estilos.css">
+</head>
+<body>
+    <header id="EncabezadoPrincipal">
+        <a class="EnlaceLogo" href="index.html">Futbolle</a>
+        <nav id="NavegacionPrincipal">
+            <a class="EnlaceNavegacion" href="index.html">Inicio</a>
+            <a class="EnlaceNavegacion" href="contacto.html">Contacto</a>
+            <button id="BotonHistorial" class="BotonIcono" type="button">Historial</button>
+            <button id="BotonAlternarTema" class="BotonIcono" type="button">Modo oscuro</button>
+        </nav>
+    </header>
+    <main id="ContenidoPrincipal">
+        <section id="PantallaInicio" class="SeccionPantalla">
+            <h1 class="TituloPantalla">Adivina al jugador secreto</h1>
+            <p class="SubtituloPantalla">Tenes 8 intentos para descubrirlo</p>
+            <form id="FormularioInicio" novalidate>
+                <label class="EtiquetaCampo" for="InputNombreJugador">Tu nombre</label>
+                <input class="InputTexto" id="InputNombreJugador" type="text" autocomplete="off" placeholder="Ingresa tu nombre">
+                <p class="ErrorCampo oculto" id="ErrorNombreJugador">El nombre debe tener al menos 3 letras</p>
+                <fieldset id="GrupoDificultad">
+                    <legend class="EtiquetaCampo">Dificultad</legend>
+                    <label class="EtiquetaRadio">
+                        <input checked="checked" name="Dificultad" type="radio" value="facil">
+                        Facil
+                    </label>
+                    <label class="EtiquetaRadio">
+                        <input name="Dificultad" type="radio" value="medio">
+                        Medio
+                    </label>
+                    <label class="EtiquetaRadio">
+                        <input name="Dificultad" type="radio" value="dificil">
+                        Dificil
+                    </label>
+                </fieldset>
+                <button class="BotonPrimario" id="BotonIniciar" type="submit">Jugar</button>
+            </form>
+        </section>
+        <section class="SeccionPantalla oculto" id="PantallaJuego">
+            <div id="BarraEstadoJuego">
+                <div class="ItemEstado">
+                    <span class="EtiquetaEstado">Intentos restantes</span>
+                    <span id="ValorIntentosRestantes">8</span>
+                </div>
+                <div class="ItemEstado">
+                    <span class="EtiquetaEstado">Tiempo</span>
+                    <span id="ValorTemporizador">00:00</span>
+                </div>
+                <div class="ItemEstado">
+                    <span class="EtiquetaEstado">Dificultad</span>
+                    <span id="ValorDificultad">Facil</span>
+                </div>
+                <button class="BotonSecundario" id="BotonReiniciar" type="button">Nueva partida</button>
+            </div>
+            <div id="ContenedorFotoSecreta" class="oculto">
+                <img alt="Jugador secreto" id="FotoSecreta" src="">
+            </div>
+            <div id="ListaPistasReveladas"></div>
+            <div id="ContenedorBusqueda">
+                <input autocomplete="off" class="InputTexto" id="InputIntento" placeholder="Escribi el nombre de un jugador..." type="text">
+                <ul class="oculto" id="ListaSugerencias"></ul>
+            </div>
+            <div id="TableroIntentos"></div>
+        </section>
+    </main>
+    <div class="CapaModal oculto" id="CapaModal">
+        <div class="CajaModal" id="CajaModal">
+            <h2 id="TituloModal"></h2>
+            <p id="MensajeModal"></p>
+            <div id="BotonesModal">
+                <button class="BotonPrimario" id="BotonCerrarModal" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <div class="CapaModal oculto" id="CapaModalHistorial">
+        <div class="CajaModal CajaModalHistorial" id="CajaModalHistorial">
+            <h2>Historial de partidas</h2>
+            <div id="ControlesOrdenHistorial">
+                <span class="EtiquetaEstado">Ordenar por</span>
+                <button class="BotonSecundario" data-sort="fecha" id="BotonOrdenarPorFecha" type="button">Fecha</button>
+                <button class="BotonSecundario" data-sort="intentos" id="BotonOrdenarPorIntentos" type="button">Intentos</button>
+            </div>
+            <div id="ListaHistorial"></div>
+            <button class="BotonPrimario" id="BotonCerrarHistorial" type="button">Cerrar</button>
+        </div>
+    </div>
+    <footer id="PiePaginaPrincipal">
+        <a href="https://github.com/JuanBocadi/futbolle-daw-2026" id="EnlaceGithub" rel="noopener noreferrer" target="_blank">Ver codigo en GitHub</a>
+    </footer>
+    <audio id="SonidoAcierto" preload="auto" src="Sonidos/Acierto.mp3"></audio>
+    <audio id="SonidoVictoria" preload="auto" src="Sonidos/Victoria.mp3"></audio>
+    <audio id="SonidoDerrota" preload="auto" src="Sonidos/Derrota.mp3"></audio>
+    <script src="Js/Api.js"></script>
+    <script src="Js/Almacenamiento.js"></script>
+    <script src="Js/Sonido.js"></script>
+    <script src="Js/Modal.js"></script>
+    <script src="Js/Interfaz.js"></script>
+    <script src="Js/Autocompletado.js"></script>
+    <script src="Js/NucleoJuego.js"></script>
+    <script src="Js/Inicio.js"></script>
+</body>
+</html>

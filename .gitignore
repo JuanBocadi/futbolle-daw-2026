@@ -1,0 +1,12 @@
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+.thumbnails/
+
+# Archivos de editores de codigo
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbolle - Contacto</title>
+    <link rel="stylesheet" href="Css/Reset.css">
+    <link rel="stylesheet" href="Css/Estilos.css">
+</head>
+<body>
+    <header id="EncabezadoPrincipal">
+        <a class="EnlaceLogo" href="index.html">Futbolle</a>
+        <nav id="NavegacionPrincipal">
+            <a class="EnlaceNavegacion" href="index.html">Inicio</a>
+            <a class="EnlaceNavegacion" href="contacto.html">Contacto</a>
+            <button id="BotonAlternarTema" class="BotonIcono" type="button">Modo oscuro</button>
+        </nav>
+    </header>
+    <main id="ContenidoPrincipal">
+        <section class="SeccionPantalla" id="SeccionContacto">
+            <h1 class="TituloPantalla">Contacto</h1>
+            <p class="SubtituloPantalla">Escribinos y te respondemos por mail</p>
+            <form id="FormularioContacto" novalidate>
+                <label class="EtiquetaCampo" for="InputNombreContacto">Nombre</label>
+                <input autocomplete="off" class="InputTexto" id="InputNombreContacto" type="text">
+                <p class="ErrorCampo oculto" id="ErrorNombreContacto">Ingresa un nombre valido (solo letras y numeros)</p>
+                <label class="EtiquetaCampo" for="InputEmailContacto">Mail</label>
+                <input autocomplete="off" class="InputTexto" id="InputEmailContacto" type="text">
+                <p class="ErrorCampo oculto" id="ErrorEmailContacto">Ingresa un mail valido</p>
+                <label class="EtiquetaCampo" for="InputMensajeContacto">Mensaje</label>
+                <textarea class="InputTexto" id="InputMensajeContacto" rows="5"></textarea>
+                <p class="ErrorCampo oculto" id="ErrorMensajeContacto">El mensaje debe tener mas de 5 caracteres</p>
+                <button class="BotonPrimario" id="BotonEnviarContacto" type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <div class="CapaModal oculto" id="CapaModal">
+        <div class="CajaModal" id="CajaModal">
+            <h2 id="TituloModal"></h2>
+            <p id="MensajeModal"></p>
+            <div id="BotonesModal">
+                <button class="BotonPrimario" id="BotonCerrarModal" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <footer id="PiePaginaPrincipal">
+        <a href="https://github.com/JuanBocadi/futbolle-daw-2026" id="EnlaceGithub" rel="noopener noreferrer" target="_blank">Ver codigo en GitHub</a>
+    </footer>
+    <script src="Js/Modal.js"></script>
+    <script src="Js/ValidacionContacto.js"></script>
+    <script src="Js/Interfaz.js"></script>
+</body>
+</html>
